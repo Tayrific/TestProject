@@ -18,12 +18,12 @@ namespace TestProject1
             return a - b;
         }
 
-        public int Multiply(int a, int b)
+        public double Multiply(double a, double b)
         {
             return a * b;
         }
 
-        public int Divide(int a, int b)
+        public double Divide(double a, double b)
         {
             return a / b;
         }

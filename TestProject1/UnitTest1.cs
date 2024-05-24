@@ -33,10 +33,11 @@ namespace TestProject1
         [TestCase(3, 2, 6)]
         [TestCase(3, 3, 9)]
         [TestCase(5, 5, 25)]
-        public void TestMultiply(int input,int input2, int expected)
+        public void TestMultiply(double input, double input2, double expected)
         {
             Arithmetic arith = new Arithmetic();
-            int result = arith.Multiply(input, input2);
+
+            double result = arith.Multiply(input, input2);
             
             Assert.AreEqual(expected, result);
         }
@@ -46,7 +47,7 @@ namespace TestProject1
         {
             Arithmetic arith = new Arithmetic();
             int expected =  2;
-            int actual = arith.Divide(4, 2);
+            double actual = arith.Divide(4, 2);
             
             Assert.AreEqual(expected, actual);
         }
@@ -64,7 +65,7 @@ namespace TestProject1
 
         [TestCase(5, 31.42)]
         [TestCase(10, 62.83)]
-        public void TestCirclePerimeter(int input, double expected)
+        public void TestCirclePerimeter(double input, double expected)
         {
             Circle circle = new Circle();
             circle.Radius = input;
@@ -76,7 +77,7 @@ namespace TestProject1
         [TestCase(5, 10, 50)]
         [TestCase(10, 10, 100)]
         [TestCase(4, 12, 48)]
-        public void TestRectangleArea(int width, int height, int expected)
+        public void TestRectangleArea(double width, double height, double expected)
         {
             Rectangle rectangle = new Rectangle();
             rectangle.Width = width;
