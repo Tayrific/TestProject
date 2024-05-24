@@ -30,14 +30,15 @@ namespace TestProject1
             Assert.AreEqual(expected, actual);
         }
 
-        [Test]
-        public void TestMultiply()
+        [TestCase(3, 2, 6)]
+        [TestCase(3, 3, 9)]
+        [TestCase(5, 5, 25)]
+        public void TestMultiply(int input,int input2, int expected)
         {
             Arithmetic arith = new Arithmetic();
-            int expected =  6;
-            int actual = arith.Multiply(3, 2);
+            int result = arith.Multiply(input, input2);
             
-            Assert.AreEqual(expected, actual);
+            Assert.AreEqual(expected, result);
         }
 
         [Test]
@@ -61,27 +62,28 @@ namespace TestProject1
             Assert.AreEqual(expected, actual, 0.01);
         }
 
-        [Test]
-        public void TestCirclePerimeter()
+        [TestCase(5, 31.42)]
+        [TestCase(10, 62.83)]
+        public void TestCirclePerimeter(int input, double expected)
         {
             Circle circle = new Circle();
-            circle.Radius = 5;
-            double expected = 31.42;
-            double actual = circle.perimeter();
+            circle.Radius = input;
+            double result = circle.perimeter();
             
-            Assert.AreEqual(expected, actual, 0.01);
+            Assert.AreEqual(expected, result, 0.01);
         }
 
-        [Test]
-        public void TestRectangleArea()
+        [TestCase(5, 10, 50)]
+        [TestCase(10, 10, 100)]
+        [TestCase(4, 12, 48)]
+        public void TestRectangleArea(int width, int height, int expected)
         {
             Rectangle rectangle = new Rectangle();
-            rectangle.Width = 5;
-            rectangle.Height = 10;
-            double expected = 50;
-            double actual = rectangle.Area();
+            rectangle.Width = width;
+            rectangle.Height = height;
+            double result = rectangle.Area();
             
-            Assert.AreEqual(expected, actual, 0.01);
+            Assert.AreEqual(expected, result, 0.01);
         }
 
         [Test]
